@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ep298479/ontologies/2023/9/untitled-ontology-6"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ep298479/ontologies/2023/9/untitled-ontology-6">
+    <Prefix name="" IRI="http://www.semanticweb.org/ep298479/ontologies/2023/9/untitled-ontology-6/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Agence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgencePrivée"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgencePublique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PetiteSociété"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Réservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Société"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SociétéPrivée"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Voiture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VoitureAppréciée"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#agenceArrivée"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#agenceDépart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#comporte"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#concerne"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estComporté"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estConcerné"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estGéré"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estPossédé"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#gère"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#possède"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#PetiteSociété"/>
+        <ObjectMaxCardinality cardinality="3">
+            <ObjectProperty IRI="#comporte"/>
+            <Class IRI="#Agence"/>
+        </ObjectMaxCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SociétéPrivée"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#comporte"/>
+            <Class IRI="#AgencePrivée"/>
+        </ObjectAllValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VoitureAppréciée"/>
+        <ObjectMinCardinality cardinality="10">
+            <ObjectProperty IRI="#estConcerné"/>
+            <Class IRI="#Réservation"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Agence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#gère"/>
+            <Class IRI="#Voiture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Agence"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#estComporté"/>
+            <Class IRI="#Société"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgencePrivée"/>
+        <Class IRI="#Agence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgencePublique"/>
+        <Class IRI="#Agence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PetiteSociété"/>
+        <Class IRI="#Société"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Réservation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#agenceArrivée"/>
+            <Class IRI="#Agence"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Réservation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#agenceDépart"/>
+            <Class IRI="#Agence"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Réservation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#concerne"/>
+            <Class IRI="#Voiture"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Société"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#comporte"/>
+            <Class IRI="#Agence"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Société"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#possède"/>
+            <Class IRI="#Voiture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SociétéPrivée"/>
+        <Class IRI="#Société"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Voiture"/>
+        <ObjectIntersectionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#estGéré"/>
+                <Class IRI="#Agence"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#estPossédé"/>
+                <Class IRI="#Société"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VoitureAppréciée"/>
+        <Class IRI="#Voiture"/>
+    </SubClassOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#comporte"/>
+        <ObjectProperty IRI="#estComporté"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#concerne"/>
+        <ObjectProperty IRI="#estConcerné"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#estGéré"/>
+        <ObjectProperty IRI="#gère"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#estPossédé"/>
+        <ObjectProperty IRI="#possède"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#agenceArrivée"/>
+        <Class IRI="#Réservation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#agenceDépart"/>
+        <Class IRI="#Réservation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#comporte"/>
+        <Class IRI="#Société"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#concerne"/>
+        <Class IRI="#Réservation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estComporté"/>
+        <Class IRI="#Agence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estConcerné"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estGéré"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estPossédé"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#gère"/>
+        <Class IRI="#Agence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#possède"/>
+        <Class IRI="#Société"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#agenceArrivée"/>
+        <Class IRI="#Agence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#agenceDépart"/>
+        <Class IRI="#Agence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#comporte"/>
+        <Class IRI="#Agence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#concerne"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estComporté"/>
+        <Class IRI="#Société"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estConcerné"/>
+        <Class IRI="#Réservation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estGéré"/>
+        <Class IRI="#Agence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estPossédé"/>
+        <Class IRI="#Société"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#gère"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#possède"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

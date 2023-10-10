@@ -1,0 +1,163 @@
+Prefix(:=<http://www.semanticweb.org/ep298479/ontologies/2023/9/untitled-ontology-7/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.pizza.com/ontologies/pizza.owl>
+Annotation(rdfs:comment "Une ontologie décrivant des pizzas et diverses garnitures")
+
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Barbecue>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Champignons>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Chorizo>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Chèvre>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Comté>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Crème>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Emmental>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Fromage>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Gorgonzola>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Jambon>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Lardon>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Légumes>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Merguez>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Mozarella>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Oignon>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Olive>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Pizza>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#PizzaBase>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#PizzaGarniture>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Poivron>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#PoivronJaune>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#PoivronRouge>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#PoivronVert>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Poulet>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Roquefort>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Tomate>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#Viande>))
+Declaration(Class(<http://www.pizza.com/ontologies/pizza.owl#ViandeHachée>))
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Barbecue> (<http://www.pizza.com/ontologies/pizza.owl#Barbecue>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Barbecue> <http://www.pizza.com/ontologies/pizza.owl#PizzaBase>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Champignons> (<http://www.pizza.com/ontologies/pizza.owl#Champignons>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Champignons> <http://www.pizza.com/ontologies/pizza.owl#Légumes>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Chorizo> (<http://www.pizza.com/ontologies/pizza.owl#Chorizo>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Chorizo> <http://www.pizza.com/ontologies/pizza.owl#Viande>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Chèvre> (<http://www.pizza.com/ontologies/pizza.owl#Chèvre>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Chèvre> <http://www.pizza.com/ontologies/pizza.owl#Fromage>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Comté> (<http://www.pizza.com/ontologies/pizza.owl#Comté>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Comté> <http://www.pizza.com/ontologies/pizza.owl#Fromage>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Crème> (<http://www.pizza.com/ontologies/pizza.owl#Crème>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Crème> <http://www.pizza.com/ontologies/pizza.owl#PizzaBase>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Emmental> (<http://www.pizza.com/ontologies/pizza.owl#Emmental>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Emmental> <http://www.pizza.com/ontologies/pizza.owl#Fromage>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Fromage> (<http://www.pizza.com/ontologies/pizza.owl#Fromage>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Fromage> <http://www.pizza.com/ontologies/pizza.owl#PizzaGarniture>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Gorgonzola> (<http://www.pizza.com/ontologies/pizza.owl#Gorgonzola>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Gorgonzola> <http://www.pizza.com/ontologies/pizza.owl#Fromage>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Jambon> (<http://www.pizza.com/ontologies/pizza.owl#Jambon>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Jambon> <http://www.pizza.com/ontologies/pizza.owl#Viande>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Lardon> (<http://www.pizza.com/ontologies/pizza.owl#Lardon>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Lardon> <http://www.pizza.com/ontologies/pizza.owl#Viande>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Légumes> (<http://www.pizza.com/ontologies/pizza.owl#Légumes>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Légumes> <http://www.pizza.com/ontologies/pizza.owl#PizzaGarniture>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Merguez> (<http://www.pizza.com/ontologies/pizza.owl#Merguez>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Merguez> <http://www.pizza.com/ontologies/pizza.owl#Viande>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Mozarella> (<http://www.pizza.com/ontologies/pizza.owl#Mozarella>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Mozarella> <http://www.pizza.com/ontologies/pizza.owl#Fromage>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Oignon> (<http://www.pizza.com/ontologies/pizza.owl#Oignon>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Oignon> <http://www.pizza.com/ontologies/pizza.owl#Légumes>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Olive> (<http://www.pizza.com/ontologies/pizza.owl#Olive>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Olive> <http://www.pizza.com/ontologies/pizza.owl#Légumes>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Pizza> (<http://www.pizza.com/ontologies/pizza.owl#Pizza>)
+
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#PizzaBase> (<http://www.pizza.com/ontologies/pizza.owl#PizzaBase>)
+
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#PizzaGarniture> (<http://www.pizza.com/ontologies/pizza.owl#PizzaGarniture>)
+
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Poivron> (<http://www.pizza.com/ontologies/pizza.owl#Poivron>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Poivron> <http://www.pizza.com/ontologies/pizza.owl#Légumes>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#PoivronJaune> (<http://www.pizza.com/ontologies/pizza.owl#PoivronJaune>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#PoivronJaune> <http://www.pizza.com/ontologies/pizza.owl#Poivron>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#PoivronRouge> (<http://www.pizza.com/ontologies/pizza.owl#PoivronRouge>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#PoivronRouge> <http://www.pizza.com/ontologies/pizza.owl#Poivron>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#PoivronVert> (<http://www.pizza.com/ontologies/pizza.owl#PoivronVert>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#PoivronVert> <http://www.pizza.com/ontologies/pizza.owl#Poivron>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Poulet> (<http://www.pizza.com/ontologies/pizza.owl#Poulet>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Poulet> <http://www.pizza.com/ontologies/pizza.owl#Viande>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Roquefort> (<http://www.pizza.com/ontologies/pizza.owl#Roquefort>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Roquefort> <http://www.pizza.com/ontologies/pizza.owl#Fromage>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Tomate> (<http://www.pizza.com/ontologies/pizza.owl#Tomate>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Tomate> <http://www.pizza.com/ontologies/pizza.owl#PizzaBase>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#Viande> (<http://www.pizza.com/ontologies/pizza.owl#Viande>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#Viande> <http://www.pizza.com/ontologies/pizza.owl#PizzaGarniture>)
+
+# Class: <http://www.pizza.com/ontologies/pizza.owl#ViandeHachée> (<http://www.pizza.com/ontologies/pizza.owl#ViandeHachée>)
+
+SubClassOf(<http://www.pizza.com/ontologies/pizza.owl#ViandeHachée> <http://www.pizza.com/ontologies/pizza.owl#Viande>)
+
+
+DisjointClasses(<http://www.pizza.com/ontologies/pizza.owl#Barbecue> <http://www.pizza.com/ontologies/pizza.owl#Crème> <http://www.pizza.com/ontologies/pizza.owl#Tomate>)
+DisjointClasses(<http://www.pizza.com/ontologies/pizza.owl#Champignons> <http://www.pizza.com/ontologies/pizza.owl#Oignon> <http://www.pizza.com/ontologies/pizza.owl#Olive> <http://www.pizza.com/ontologies/pizza.owl#Poivron>)
+DisjointClasses(<http://www.pizza.com/ontologies/pizza.owl#Chorizo> <http://www.pizza.com/ontologies/pizza.owl#Jambon> <http://www.pizza.com/ontologies/pizza.owl#Lardon> <http://www.pizza.com/ontologies/pizza.owl#Merguez> <http://www.pizza.com/ontologies/pizza.owl#Poulet> <http://www.pizza.com/ontologies/pizza.owl#ViandeHachée>)
+DisjointClasses(<http://www.pizza.com/ontologies/pizza.owl#Chèvre> <http://www.pizza.com/ontologies/pizza.owl#Comté> <http://www.pizza.com/ontologies/pizza.owl#Emmental> <http://www.pizza.com/ontologies/pizza.owl#Gorgonzola> <http://www.pizza.com/ontologies/pizza.owl#Mozarella> <http://www.pizza.com/ontologies/pizza.owl#Roquefort>)
+DisjointClasses(<http://www.pizza.com/ontologies/pizza.owl#Fromage> <http://www.pizza.com/ontologies/pizza.owl#Légumes> <http://www.pizza.com/ontologies/pizza.owl#Viande>)
+DisjointClasses(<http://www.pizza.com/ontologies/pizza.owl#Pizza> <http://www.pizza.com/ontologies/pizza.owl#PizzaBase> <http://www.pizza.com/ontologies/pizza.owl#PizzaGarniture>)
+DisjointClasses(<http://www.pizza.com/ontologies/pizza.owl#PoivronJaune> <http://www.pizza.com/ontologies/pizza.owl#PoivronRouge> <http://www.pizza.com/ontologies/pizza.owl#PoivronVert>)
+)
