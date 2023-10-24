@@ -4,12 +4,12 @@ import java.rmi.*;
 import java.util.Queue;
 import java.util.LinkedList;
 
-public class BagOfTasksImp extends UnicastRemoteObject implements BagOfTasks, BagOfTasksApp {
+public class BagOfTasksImp extends UnicastRemoteObject implements BagOfTasks {
 
-    public Queue<TaskImp> taskQueue;
+    public Queue<Task> taskQueue;
     public int result;
 
-    public BagOfTasksImp(int premiers) throws java.rmi.RemoteException{
+    public BagOfTasksImp() throws java.rmi.RemoteException{
         taskQueue = new LinkedList<>();
     }
 
@@ -23,14 +23,14 @@ public class BagOfTasksImp extends UnicastRemoteObject implements BagOfTasks, Ba
         return taskQueue.remove();
     }
 
-    public void sendResult(Task t){
+    /* public void sendResult(Task t){
         if(t.getResult()){
             System.out.println("Une requête a été effectuée");
         }
-    }
+    } */
 
     public void submitTask(Task task){
-        System.out.println("Requête reçue : "+task.query);
+        System.out.println("Requête reçue dans la queue : "+task.getQuery());
         taskQueue.add(task);
     }
     

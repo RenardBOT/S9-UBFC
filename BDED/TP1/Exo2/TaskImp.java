@@ -26,22 +26,39 @@ public class TaskImp implements Serializable,Task  {
 
     public void execute(){
         // CONSTANTES CONNEXION BD
-        final private static String LOGIN = "ep298479";
-        final private static String MDP = "ep298479";
-        final private static String URL = "jdbc:oracle:thin:@eluard:1521:eluard2023";
+        final String LOGIN = "ep298479";
+        final String MDP = "ep298479";
+        final String URL = "jdbc:oracle:thin:@eluard:1521:eluard2023"; 
 
         // CONNEXION BD
+        try{ 
+        
         Class.forName("oracle.jdbc.driver.OracleDriver");
         Connection connexion = DriverManager.getConnection(URL, LOGIN, MDP);
 
         result = "";
         PreparedStatement preparedStmt = connexion.prepareStatement(this.query);
         ResultSet rsPreparedStmt = preparedStmt.executeQuery();
-        callback.updateResult("OK");
-    }
+        
+        // Update du callback pour contenir le résultat de la requête
+        while(rsPreparedStmt.next()){
+            result += rsPreparedStmt.getString(1) + " " + rsPreparedStmt.getString(2) + "\n";
+        }
+        
+        callback.setData(result);
+        System.out.println("Résultat de la requête : " + result);
+        connexion.close();
+        }catch(Exception e){
+            System.err.println("Erreur :"+e);
 
-    public String getResult(){
-        return "Résultat";
+            // Ajout de l'erreur dans le callback (gestion de la remote exception)
+            try{  
+                callback.setData("ERREUR :"+e);
+            }catch(Exception e2){
+                System.err.println("Erreur :"+e2);
+            }
+            
+        }
     }
     
 }

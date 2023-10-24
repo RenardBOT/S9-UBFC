@@ -8,19 +8,18 @@ public class Client {
     public static void main(String args[]){
         try{
             System.out.println("Récupération du bag of tasks...");
-            BagOfTasks bag = (BagOfTasks) Naming.lookup("rmi://172.31.18.43:1099/bag");
+            BagOfTasks bag = (BagOfTasks) Naming.lookup("//172.31.18.37:1099/bag");
             System.out.println("Bag of tasks récupéré");
 
             boolean next = true;
             while(next){
-                Thread.sleep(250);
+                Thread.sleep(5000);
                 Task t = bag.nextTask();
                 if(t == null)
-                    next = false;
+                    continue;
                 else{
-                    System.out.println("Traitement du nombre "+t.getValue()+"...");
+                    System.out.println("Execution de la requête suivante :\n" + t.getQuery() );
                     t.execute();
-                    bag.sendResult(t);
                 }
             }
             

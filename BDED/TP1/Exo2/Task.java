@@ -7,8 +7,5 @@ public interface Task extends Serializable {
 
     public void execute();
 
-    public String getQuery();
-
-    public String getResult();
-    
+    public String getQuery();  
 }
