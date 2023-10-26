@@ -4,7 +4,7 @@ public class Client {
     public static void main(String args[]){
         
         try{
-            Scanner scan = new Scanner(System.in);
+            SWorker scan = new Scanner(System.in);
             /*while(true){
                 String input = scan.nextLine();
                 System.out.println("Entrée : "+input);

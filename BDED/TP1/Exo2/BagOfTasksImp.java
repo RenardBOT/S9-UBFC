@@ -10,6 +10,8 @@ public class BagOfTasksImp extends UnicastRemoteObject implements BagOfTasks {
     public int result;
 
     public BagOfTasksImp() throws java.rmi.RemoteException{
+
+        // Queue contenant les requêtes à répartir entre les Workers
         taskQueue = new LinkedList<>();
     }
 
@@ -22,12 +24,6 @@ public class BagOfTasksImp extends UnicastRemoteObject implements BagOfTasks {
             return null;
         return taskQueue.remove();
     }
-
-    /* public void sendResult(Task t){
-        if(t.getResult()){
-            System.out.println("Une requête a été effectuée");
-        }
-    } */
 
     public void submitTask(Task task){
         System.out.println("Requête reçue dans la queue : "+task.getQuery());

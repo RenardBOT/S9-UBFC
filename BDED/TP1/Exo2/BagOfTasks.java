@@ -8,9 +8,5 @@ public interface BagOfTasks extends Remote {
     public Task nextTask() throws java.rmi.RemoteException;
     
     public void submitTask(Task task) throws java.rmi.RemoteException;
-
-    //public void sendResult(Task t) throws java.rmi.RemoteException;
-
-    
     
 }

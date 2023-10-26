@@ -51,10 +51,10 @@ Si l'on considère que **no** indique la positivité
 
 **Q2.** Humidity et Windy sont deux attributs prenant deux valeurs. La plupart des exemples où l'humidité est normale (6/7) l'attribut play vaut yes, donc il semble idéal pour classifier.
 
-**Q9.a** Outlook est l'attribut utilisé en premier pour classifier, et cela semble logique, étant donné que pour la valeur "overcast", tous les exemples sont à yes.
+**Q3.a** Outlook est l'attribut utilisé en premier pour classifier, et cela semble logique, étant donné que pour la valeur "overcast", tous les exemples sont à yes.
 **Au final Outlook semble être le meilleur attribut à utiliser pour classifier.**
 
-**Q9.b** En consultant l'arbre, on trouve deux chemins permettant d'atteindre **No** qui est la valeur de positivité :
+**Q3.b** En consultant l'arbre, on trouve deux chemins permettant d'atteindre **No** qui est la valeur de positivité :
 ```
 (outlook = sunny) -> (humidity = high) 
 (outlook = rainy) -> (windy = TRUE) 
@@ -66,8 +66,25 @@ Donc la fonction de reconnaissance est :
 ```
 Qui est exactement celle trouvée avec l'algorithme JRip.
 
-**Q10.** J48 appliqué sur *weather.numeric* donne de meilleurs résultats que sur *weather.nominal* (64% vs 50% de classifications correctes).
+**Q4.** J48 appliqué sur *weather.numeric* donne de meilleurs résultats que sur *weather.nominal* (64% vs 50% de classifications correctes).
 Cependant, JRip donne un résultat inverse (57% vs 54% de classifications correctes).  
 On peut ainsi supposer que J48 fonctionne mieux sur des attributs continus, tandis que JRip fonctionne mieux sur des attributs discrets.  
 <ins>Noter que les jeux de données utilisés sont assez petits, et les résultats obtenus par conséquent peu conclusifs</ins>
+
 # Apprentissage encore
+
+**Q1.** Manipulation
+
+**Q2.a** Ces nombres signifient que des individus avec le diabète ont été classés comme n'ayant pas le diabète, et inversement.
+
+**Q2.b** Car on utilise des valeurs continues.
+
+**Q3.** C'est une galère a expliquer simplement :9
+
+**Q4.a** Attribut important : Glucose dans le sang. En changeant l'algorithme pour que l'arbre n'ait qu'une profondeur de 1, on ne perd que 2% de résultats correctement classés.
+
+**Q4.b** Oui, par exemple : Une personne dont l'IMC est supérieure à 29.9 et dont le taux de plasma dans le sang à 157
+
+**Q4.c** Les arbres de décision sont facilement interprétable et compréhensibles contrairement aux autres algorithme de classification qui sont des boîtes noires.
+
+**Q5.** Les résultats finaux sont similaires, mais l'arbre obtenu est complètement différent 
