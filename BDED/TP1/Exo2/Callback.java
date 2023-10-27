@@ -1,8 +1,8 @@
 import java.io.Serializable;
 import java.rmi.Remote;
-import java.rmi.*;
+import java.rmi.RemoteException;
 
-public interface Callback extends Serializable, Remote {
+public interface Callback extends Remote {
 
       public String getData() throws java.rmi.RemoteException;
 

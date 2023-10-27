@@ -1,0 +1,4 @@
+ip=172.31.18.9
+port=1100
+interactive=true
+bagSize=3

@@ -1,11 +1,15 @@
+
 import java.rmi.server.*;
 import java.rmi.*;
+import java.io.Serializable;
+
 
 public class CallbackImp extends UnicastRemoteObject implements Callback {
+      
       private String data;
 
-      public CallbackImp() throws RemoteException {
-            this.data = "EMPTY CALLBACK";
+      public CallbackImp() throws java.rmi.RemoteException {
+            this.data = null;
       }
 
       public String getData() {
@@ -14,5 +18,5 @@ public class CallbackImp extends UnicastRemoteObject implements Callback {
 
       public void setData(String newData) {
             this.data = newData;
-                  }
+      }
 }

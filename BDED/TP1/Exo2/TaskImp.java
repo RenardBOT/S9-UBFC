@@ -40,25 +40,42 @@ public class TaskImp implements Serializable,Task  {
         result = "";
         PreparedStatement preparedStmt = connexion.prepareStatement(this.query);
         ResultSet rsPreparedStmt = preparedStmt.executeQuery();
-        
-        // Update du callback pour contenir le résultat de la requête
-        while(rsPreparedStmt.next()){
-            result += rsPreparedStmt.getString(1) + " " + rsPreparedStmt.getString(2) + "\n";
+
+        System.out.println("ok");
+
+        // Traitement du résultat d'une requête insert, update ou delete
+        if(rsPreparedStmt.getMetaData().getColumnCount() == 0){
+            result = "REQUETE : "+this.query+"\nRESULTAT : REQUETE EXECUTEE AVEC SUCCES";
         }
+
+        // Traitement du résultat d'une requête select, drop table ou create table (et d'autres requêtes qui retournent un résultat)
+        if(!rsPreparedStmt.next()){
+            result = "REQUETE : "+this.query+"\nRESULTAT : REQUETE EXECUTEE AVEC SUCCES";
+        }else{
+            result = "REQUETE : "+this.query+"\nRESULTAT : \n";
+            do{
+                result += rsPreparedStmt.getString(1) + " " + rsPreparedStmt.getString(2) + "\n";
+            }while(rsPreparedStmt.next());
+        }
+    
+
         
+        
+
         callback.setData(result);
+
         System.out.println("Résultat de la requête : " + result);
         connexion.close();
-        }catch(Exception e){
-            System.err.println("Erreur :"+e);
 
+
+        }catch(Exception e){
+            System.err.println("Erreur 2 :"+e);
             // Ajout de l'erreur dans le callback (gestion de la remote exception)
             try{  
                 callback.setData("ERREUR :"+e);
             }catch(Exception e2){
-                System.err.println("Erreur :"+e2);
-            }
-            
+                System.err.println("Erreur 3 :"+e2);
+            }   
         }
     }
     
