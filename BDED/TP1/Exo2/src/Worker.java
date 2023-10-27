@@ -7,19 +7,11 @@ import java.lang.Thread;
 public class Worker {
     public static void main(String args[]){
 
-       // Le premier argument est le temps de sommeil du worker (en ms), par défaut 0ms
-        int sleepTime = 0;
-
-        try{
-            sleepTime = Integer.parseInt(args[0]);
-        }catch(Exception e){
-            System.out.println("Pas de temps de sommeil spécifié, utilisation de la valeur par défaut : 500ms");
-        }
-
-        // Récupération de l'ip, du port et du boolean interactive avec la classe Config
+        // Récupération de l'ip, du port, du temps de sommeil entre les traitements et du boolean interactive avec la classe Config
         String ip = Config.getIp();
         int port = Config.getPort();
         boolean interactive = Config.getInteractive();
+        int sleepTime = Config.getSleepTime();
 
         // Construction de l'url du bag of tasks
         String url = "//"+ip+":"+port+"/bag";

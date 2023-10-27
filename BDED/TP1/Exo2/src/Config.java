@@ -37,5 +37,10 @@ public class Config {
       public static boolean getInteractive() {
             return Boolean.parseBoolean(properties.getProperty("interactive"));
       }
+
+      // Récupération du sleepTime
+      public static int getSleepTime() {
+            return Integer.parseInt(properties.getProperty("sleepTime"));
+      }
       
 }
