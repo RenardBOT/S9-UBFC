@@ -27,7 +27,7 @@ Lancement de k clients :
 ```
 $ ./_startClients k
 ```
-Enfin, un dernier script exécute les trois l'un après l'autre pour gagner en efficacité :
+**ALTERNATIVEMENT**, un dernier script exécute les trois l'un après l'autre pour gagner en efficacité :
 ```
 $ ./_startAll n k
 ```
